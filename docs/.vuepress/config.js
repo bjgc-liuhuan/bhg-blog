@@ -151,31 +151,44 @@ module.exports = {
         hm: '503f098e7e5b3a5b5d8c5fc2938af002'
       }
     ],
+    // [
+    //   'vuepress-plugin-comment', // 评论
+    //   // {
+    //   //   choosen: 'valine', 
+    //   //   options: {
+    //   //     el: '#valine-vuepress-comment',
+    //   //     appId: 'GL8eMoz9r9vcIgIRA8yu7toU-gzGzoHsz',
+    //   //     appKey: 'ksqMwK5Jb4gUYNoPs1Vs1kc8'
+    //   //   }
+    //   // }
+    //   {
+    //     choosen: 'gitalk', 
+    //     options: {
+    //       clientID: 'a2b9345db5cf60ef1f0e',
+    //       clientSecret: '168651c9314958b2c8cb20ac46b086cbffd2a881',
+    //       repo: 'bhg-blog', // GitHub 仓库
+    //       // owner: 'xugaoyi', // GitHub仓库所有者
+    //       // admin: ['xugaoyi'], // 对仓库有写权限的人
+    //       // distractionFreeMode: true,
+    //       pagerDirection: 'last', // 'first'正序 | 'last'倒序
+    //       id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
+    //       title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
+    //       labels: ["Gitalk", "Comment"], // GitHub issue 的标签
+    //       body:"页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>" // GitHub issue 的内容
+    //     }
+    //   }
+    // ],
     [
-      'vuepress-plugin-comment', // 评论
-      // {
-      //   choosen: 'valine', 
-      //   options: {
-      //     el: '#valine-vuepress-comment',
-      //     appId: 'GL8eMoz9r9vcIgIRA8yu7toU-gzGzoHsz',
-      //     appKey: 'ksqMwK5Jb4gUYNoPs1Vs1kc8'
-      //   }
-      // }
-      {
-        choosen: 'gitalk', 
-        options: {
-          clientID: 'a2b9345db5cf60ef1f0e',
-          clientSecret: '168651c9314958b2c8cb20ac46b086cbffd2a881',
-          repo: 'bhg-blog', // GitHub 仓库
-          // owner: 'xugaoyi', // GitHub仓库所有者
-          // admin: ['xugaoyi'], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: "<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>", //  页面的唯一标识,长度不能超过50
-          title: "「评论」<%- frontmatter.title %>", // GitHub issue 的标题
-          labels: ["Gitalk", "Comment"], // GitHub issue 的标签
-          body:"页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>" // GitHub issue 的内容
-        }
+      '@vssue/vuepress-plugin-vssue',
+       {
+        platform: 'github', //v3的platform是github，v4的是github-v4
+        locale: 'zh', //语言
+        // 其他的 Vssue 配置
+        owner: 'bjgc-liuhuan', //github账户名
+        repo: 'bhg-blog', //github一个项目的名称
+        clientId: 'a2b9345db5cf60ef1f0e',//注册的Client ID
+        clientSecret: '168651c9314958b2c8cb20ac46b086cbffd2a881',//注册的Client Secret
+        autoCreateIssue:true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
       }
     ],
     [
