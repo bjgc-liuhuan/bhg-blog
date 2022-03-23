@@ -165,8 +165,8 @@ module.exports = {
         choosen: 'gitalk', 
         options: {
           clientID: 'a2b9345db5cf60ef1f0e',
-          clientSecret: 'a8bdbe83673b6e68f8021d62dd5993ae6b012df0',
-          repo: 'vuepress-theme-vdoing', // GitHub 仓库
+          clientSecret: '168651c9314958b2c8cb20ac46b086cbffd2a881',
+          repo: 'bhg-blog', // GitHub 仓库
           // owner: 'xugaoyi', // GitHub仓库所有者
           // admin: ['xugaoyi'], // 对仓库有写权限的人
           // distractionFreeMode: true,
